@@ -2,6 +2,33 @@
     border: black 1px solid;
 }
 
+:root{
+    --cardBackground: #8ec7ec;
+    --titleBackground: #135013;
+
+}
+
 .userChoice {
     border-bottom: darkblue 3px solid;
+}
+
+.low {
+    border-right: #5bc78a 10px solid ;
+}
+
+.moderate{
+    border-right: #dbd145 10px solid ;
+}
+
+.high {
+    border-right: #c7865b 10px solid ;
+
+}
+
+.very-high {
+    border-right: #d41919 10px solid ;
+}
+
+.extreme {
+    border-right: #c02eb4 10px solid ;
 }

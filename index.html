@@ -12,98 +12,117 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="./assets/css/style.css" />
-		<title>Document</title>
+		<title>Weather Abound</title>
 	</head>
 	<body>
 		<header class="container">
 			<h1 class="text-center">Weather Abound!</h1>
 		</header>
-		<section class="container-fluid row">
-			<div class="col-12 col-md-3 d-flex flex-column align-items-center">
-				<form class="userChoice w-100" action="">
+		<section
+			class="container-fluid row my-3 align-items-center justify-content-evenly"
+		>
+			<div class="col-12 col-md-3 d-flex flex-column align-items-center my-2">
+				<form class="userChoice w-100" id="citySearch" action="">
 					<input
+						id="userInput"
 						class="w-100 my-2"
 						type="text"
-						placeholder="Enter City Name Here"
+						placeholder="Enter City Name, State Code"
 					/>
 					<input class="btn btn-info w-100 my-1" type="submit" value="Search" />
 				</form>
-				<button type="button" class="btn btn-secondary w-100 my-1">
+				<button
+					type="button"
+					id="search"
+					class="btn btn-secondary w-100 my-1 oldSearch"
+					value="Denver, CO"
+				>
 					Denver
 				</button>
-				<button type="button" class="btn btn-secondary w-100 my-1">
+				<button
+					type="button"
+					id="search2"
+					class="btn btn-secondary w-100 my-1 oldSearch"
+					value="New York, NY"
+				>
 					New York
 				</button>
-				<button type="button" class="btn btn-secondary w-100 my-1">
+				<button
+					type="button"
+					id="search3"
+					class="btn btn-secondary w-100 my-1 oldSearch"
+					value="Los Angels, CA"
+				>
 					Los Angeles
 				</button>
-				<button type="button" class="btn btn-secondary w-100 my-1">
+				<button
+					type="button"
+					id="search4"
+					class="btn btn-secondary w-100 my-1 oldSearch"
+					value="Chicago, IL"
+				>
 					Chicago
 				</button>
 			</div>
-			<div class="row col-12 col-md-9"></div>
+			<div class="row col-12 col-md-9 my-2" id="weatherBoard">
+				<h2 class="text-center" id="cityName"></h2>
+				<h3 id="temperature"></h3>
+				<h3 id="humidity"></h3>
+				<h3 id="wind"></h3>
+				<h3 id="uv" class=""></h3>
+			</div>
 		</section>
 		<section class="container-fluid row justify-content-end">
-			<div class="row col-12 justify-content-end">
-				Five Day Forecast!
+			<div class="row col-12 justify-content-evenly align-items-center">
+				<h2 class="text-center">Five Day Forecast</h2>
 				<div class="card col-6 col-md-2">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
+						<h5 class="card-title card-city">Card title</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 						<p class="card-text">
 							Some quick example text to build on the card title and make up the
 							bulk of the card's content.
 						</p>
-						<a href="#" class="card-link">Card link</a>
-						<a href="#" class="card-link">Another link</a>
 					</div>
 				</div>
 				<div class="card col-6 col-md-2">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
+						<h5 class="card-title card-city">Card title</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 						<p class="card-text">
 							Some quick example text to build on the card title and make up the
 							bulk of the card's content.
 						</p>
-						<a href="#" class="card-link">Card link</a>
-						<a href="#" class="card-link">Another link</a>
 					</div>
 				</div>
 				<div class="card col-6 col-md-2">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
+						<h5 class="card-title card-city">Card title</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 						<p class="card-text">
 							Some quick example text to build on the card title and make up the
 							bulk of the card's content.
 						</p>
-						<a href="#" class="card-link">Card link</a>
-						<a href="#" class="card-link">Another link</a>
 					</div>
 				</div>
 				<div class="card col-6 col-md-2">
-					<div class="card-body">
+					<div class="card-body card-city">
 						<h5 class="card-title">Card title</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 						<p class="card-text">
 							Some quick example text to build on the card title and make up the
 							bulk of the card's content.
 						</p>
-						<a href="#" class="card-link">Card link</a>
-						<a href="#" class="card-link">Another link</a>
 					</div>
 				</div>
 				<div class="card col-6 col-md-2">
-					<div class="card-body">
+					<div class="card-body card-city">
 						<h5 class="card-title">Card title</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 						<p class="card-text">
 							Some quick example text to build on the card title and make up the
 							bulk of the card's content.
 						</p>
-						<a href="#" class="card-link">Card link</a>
-						<a href="#" class="card-link">Another link</a>
 					</div>
 				</div>
 			</div>
