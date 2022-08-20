@@ -1,6 +1,4 @@
-* {
-    border: black 1px solid;
-}
+
 
 :root{
     --cardBackground: #8ec7ec;
@@ -8,27 +6,35 @@
 
 }
 
+body{
+    background-color: var(--titleBackground);
+}
+
+.weather {
+    background-color: var(--cardBackground);
+}
+
 .userChoice {
     border-bottom: darkblue 3px solid;
 }
 
 .low {
-    border-right: #5bc78a 10px solid ;
+    background-color: #5bc78a ;
 }
 
 .moderate{
-    border-right: #dbd145 10px solid ;
+    background-color: #dbd145 ;
 }
 
 .high {
-    border-right: #c7865b 10px solid ;
+    background-color: #c7865b;
 
 }
 
 .very-high {
-    border-right: #d41919 10px solid ;
+    background-color: #d41919;
 }
 
 .extreme {
-    border-right: #c02eb4 10px solid ;
+    background-color: #c02eb4;
 }
