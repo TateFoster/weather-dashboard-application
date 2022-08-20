@@ -24,7 +24,6 @@ var date =
 	dateCall.getFullYear();
 
 var weatherFunctions = function (city) {
-	console.log(city);
 	var forecastApi =
 		"https://api.weatherbit.io/v2.0/forecast/daily?key=" +
 		apiKey +
@@ -38,13 +37,11 @@ var weatherFunctions = function (city) {
 		city +
 		"&units=I";
 
-	console.log(cityApi);
 	fetch(cityApi)
 		.then(function (response) {
 			return response.json();
 		})
 		.then(function (data) {
-			console.log(data);
 			currentWeather(data);
 		});
 
@@ -109,7 +106,6 @@ var weatherFunctions = function (city) {
 				break;
 
 			case current.data[0].uv >= 11:
-				console.log(current.data[0].uv >= 11);
 				currentUv.removeAttribute("class");
 				currentUv.classList.add("extreme");
 				break;
@@ -121,7 +117,6 @@ var weatherFunctions = function (city) {
 			return response.json();
 		})
 		.then(function (data) {
-			console.log(data);
 			forecastWeather(data);
 		});
 
