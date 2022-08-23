@@ -59,23 +59,38 @@ var weatherFunctions = function (city) {
 			date;
 		cityNameDate.appendChild(weatherIcon);
 
-		for (i = 3; i > 0; i--) {
-			oldSearch[i].textContent = oldSearch[i - 1].textContent;
-			oldSearch[i].value = oldSearch[i - 1].value;
+		var check =
+			current.data[0].city_name +
+			", " +
+			current.data[0].state_code +
+			", " +
+			current.data[0].country_code;
+		console.log(check);
+		if (
+			oldSearch[0].value.match(check) ||
+			oldSearch[1].value.match(check) ||
+			oldSearch[2].value.match(check) ||
+			oldSearch[3].value.match(check)
+		) {
+			return;
+		} else {
+			for (i = 3; i > 0; i--) {
+				oldSearch[i].textContent = oldSearch[i - 1].textContent;
+				oldSearch[i].value = oldSearch[i - 1].value;
+			}
+			oldSearch[0].textContent =
+				current.data[0].city_name +
+				", " +
+				current.data[0].state_code +
+				", " +
+				current.data[0].country_code;
+			oldSearch[0].value =
+				current.data[0].city_name +
+				", " +
+				current.data[0].state_code +
+				", " +
+				current.data[0].country_code;
 		}
-		oldSearch[0].textContent =
-			current.data[0].city_name +
-			", " +
-			current.data[0].state_code +
-			", " +
-			current.data[0].country_code;
-		oldSearch[0].value =
-			current.data[0].city_name +
-			", " +
-			current.data[0].state_code +
-			", " +
-			current.data[0].country_code;
-
 		currentTemp.textContent = "Temperature: " + current.data[0].temp + "°F";
 		currentHumidity.textContent = "Humidity: " + current.data[0].rh + "%";
 		currentWind.textContent =
