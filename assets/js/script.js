@@ -1,4 +1,4 @@
-var apiKey = "29d121bfb0ba4ecf8d2d417144ee1c27";
+var apiKey = "a3deedc644dc461ead21a3dcc81e824b";
 var city = "";
 var citySearchEl = document.querySelector("#citySearch");
 var weatherBoard = document.querySelector("#weatherBoard");
@@ -79,14 +79,12 @@ function weatherFunctions(city) {
 			current.data[0].state_code +
 			", " +
 			current.data[0].country_code;
-		console.log(check);
 		if (
 			oldSearch[0].value.match(check) ||
 			oldSearch[1].value.match(check) ||
 			oldSearch[2].value.match(check) ||
 			oldSearch[3].value.match(check)
 		) {
-			return;
 		} else {
 			for (i = 3; i > 0; i--) {
 				oldSearch[i].textContent = oldSearch[i - 1].textContent;
@@ -111,7 +109,6 @@ function weatherFunctions(city) {
 			}
 
 			localStorage.setItem("savedLocations", JSON.stringify(oldLocations));
-			console.log(oldLocations);
 		}
 		currentTemp.textContent = "Temperature: " + current.data[0].temp + "°F";
 		currentHumidity.textContent = "Humidity: " + current.data[0].rh + "%";
