@@ -23,7 +23,21 @@ var date =
 	"/" +
 	dateCall.getFullYear();
 
-var weatherFunctions = function (city) {
+var savedLocationData = function () {
+	var savedLocations = JSON.parse(localStorage.getItem("savedLocations"));
+	if (savedLocations !== null) {
+		for (i = 0; i < savedLocations.length; i++) {
+			oldSearch[i].value = savedLocations[i];
+			oldSearch[i].textContent = savedLocations[i];
+		}
+		city = savedLocations[0];
+		weatherFunctions(city);
+	}
+};
+
+savedLocationData();
+
+function weatherFunctions(city) {
 	var forecastApi =
 		"https://api.weatherbit.io/v2.0/forecast/daily?key=" +
 		apiKey +
@@ -90,6 +104,14 @@ var weatherFunctions = function (city) {
 				current.data[0].state_code +
 				", " +
 				current.data[0].country_code;
+
+			var oldLocations = [];
+			for (i = 0; i < oldSearch.length; i++) {
+				oldLocations.push(oldSearch[i].value);
+			}
+
+			localStorage.setItem("savedLocations", JSON.stringify(oldLocations));
+			console.log(oldLocations);
 		}
 		currentTemp.textContent = "Temperature: " + current.data[0].temp + "°F";
 		currentHumidity.textContent = "Humidity: " + current.data[0].rh + "%";
@@ -151,7 +173,7 @@ var weatherFunctions = function (city) {
 				forecast.data[i].wind_cdir;
 		}
 	};
-};
+}
 citySearchEl.addEventListener("submit", function (event) {
 	event.preventDefault();
 	var userInput = document.querySelector("#userInput");
